@@ -1,0 +1,395 @@
+@import url("https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Zilla+Slab:wght@300;400;500;600;700&display=swap");
+
+/* colors */
+$black: #000000;
+$white: #ffffff;
+
+/*typography*/
+$sans: "Wix Madefor Display", sans-serif;
+$serif: "Zilla Slab", serif;
+
+:root {
+  /* font-size: ; */
+  font-size: calc(62.5% + 0.390625vw);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $black;
+}
+
+* {
+  transition: 0.3s all;
+  //   z-index: 0;
+  font-family: $serif;
+  color: $white;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*::selection {
+  background-color: white;
+  color: black;
+}
+
+input:focus,
+input:active,
+input:visited,
+textarea:focus,
+textarea:active,
+textarea:visited {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px #00000000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #3f3f3f8c;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+section {
+  padding: 2vw;
+}
+h1 {
+  font-size: 4rem;
+  font-family: $sans;
+}
+h2 {
+  font-size: 3rem;
+  font-family: $sans;
+}
+h3 {
+  font-size: 1.7rem;
+  font-family: $sans;
+  &.big {
+    font-size: 2rem;
+  }
+}
+h4 {
+  font-size: 1.2rem;
+  font-family: $sans;
+}
+h5 {
+  font-size: 1.429rem;
+  font-family: $sans;
+}
+h6,
+.big {
+  font-size: 1.214rem;
+  font-family: $sans;
+}
+.small {
+  font-size: 0.857rem;
+}
+small {
+  font-size: 0.714rem;
+}
+p,
+label,
+span,
+input,
+select,
+option,
+strong,
+a {
+  font-size: 0.9rem;
+}
+
+strong {
+  font-family: $sans;
+}
+
+a,
+span {
+  display: inline-block;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+img::selection {
+  background-color: #000;
+}
+
+.button {
+  display: block;
+  padding: 8px 16px;
+  width: 100%;
+  min-width: 100px;
+  max-width: 200px;
+  text-align: center;
+  background-color: transparent;
+  margin: auto;
+  font-family: $sans;
+  font-weight: 600;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.button-primary {
+  border: 2px solid $white;
+  &:hover {
+    background-color: $white;
+    color: $black;
+  }
+}
+.button-secondary {
+  border: 2px solid $white;
+  background-color: $white;
+  color: $black;
+  &:hover {
+    background-color: $black;
+    color: $white;
+  }
+}
+.rounded {
+  border-radius: 100rem;
+}
+
+.grid {
+  display: grid;
+}
+.g-af3 {
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-gap: 2rem;
+}
+.g-af {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+.g-by3 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.by-2 {
+  width: 50%;
+}
+.by-3 {
+  width: 30%;
+}
+
+.hidden {
+  display: none;
+}
+
+.mar-1 {
+  margin: 1rem 0;
+}
+
+.product-card {
+  overflow: hidden;
+  outline: 2px solid white;
+  .img {
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+    // -webkit-filter: grayscale(0);
+    // filter: grayscale(0);
+    height: 20rem;
+    img {
+      min-height: 20rem;
+    }
+    .overlay {
+      inset: 0;
+      // bottom: 0;
+      background-color: transparentize($color: $black, $amount: 0.3);
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      align-items: end;
+      padding: 1rem;
+      button {
+        padding: 0.3rem 1rem;
+        font-weight: 600;
+      }
+    }
+    &:hover {
+      // -webkit-filter: grayscale(1);
+      // filter: grayscale(1);
+      img {
+        scale: 1.05;
+      }
+      .overlay {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+  .details {
+    height: 17rem;
+    position: relative;
+    padding: 0 1vw;
+    h3,
+    p,
+    div {
+      margin-block: 0.5rem;
+    }
+    p {
+      font-size: 1.1rem;
+      strong {
+        font-size: 1.1rem;
+      }
+      // padding-bottom: 3rem;
+    }
+    .flex {
+      gap: 0.5rem;
+      * {
+        font-family: $sans;
+      }
+      p {
+        text-align: center;
+        span.outer {
+          text-align: center;
+          display: inline-flex;
+          align-items: center;
+          span {
+            font-size: 1rem;
+          }
+        }
+        small {
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+    .button {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      right: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.pagination {
+  width: fit-content;
+  margin: 1vw auto;
+  button {
+    background-color: transparent;
+    padding: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    overflow: hidden;
+    text-align: center;
+    border: 2px solid $white;
+    border-radius: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.5rem;
+    &.active,
+    &:hover {
+      background-color: $white;
+      color: $black;
+    }
+  }
+}
+.loader{
+  margin: 2rem auto;
+  width: fit-content;
+}
