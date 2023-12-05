@@ -1,4 +1,3 @@
-
 const Cart = ({ cart, setCart, showCart, setShowCart, deleteItem }) => {
   const updateItemCount = (itemId, newCount) => {
     const updatedCart = cart.map((item) =>
@@ -41,27 +40,33 @@ const Cart = ({ cart, setCart, showCart, setShowCart, deleteItem }) => {
         </button>
       </div>
       <ul>
-        {cart.map((item) => (
-          <div className="cart-item" key={item.id}>
-            <div className="flex align-center justify-between mar-1">
-              <h4>{item.title}</h4>
-              <button
-                className="del flex align-center justify-center"
-                onClick={() => deleteItem(item.id)}
-              >
-                ╳
-              </button>
+        {cart.length ? (
+          cart.map((item) => (
+            <div className="cart-item" key={item.id}>
+              <div className="flex align-center justify-between mar-1">
+                <h4>{item.title}</h4>
+                <button
+                  className="del flex align-center justify-center"
+                  onClick={() => deleteItem(item.id)}
+                >
+                  ╳
+                </button>
+              </div>
+              <p className="mar-1">
+                {(item.discountPrice * item.count).toFixed(2)}
+              </p>
+              <div className="count flex align-center mar-1">
+                <button onClick={() => decreaseCount(item.id)}>-</button>
+                <input type="number" value={item.count} readOnly />
+                <button onClick={() => increaseCount(item.id)}>+</button>
+              </div>
             </div>
-            <p className="mar-1">
-              {(item.discountPrice * item.count).toFixed(2)}
-            </p>
-            <div className="count flex align-center mar-1">
-              <button onClick={() => decreaseCount(item.id)}>-</button>
-              <input type="number" value={item.count} readOnly />
-              <button onClick={() => increaseCount(item.id)}>+</button>
-            </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <h4 className="flex align-center justify-center">
+            <i>There is nothing in your cart</i>
+          </h4>
+        )}
       </ul>
       <div className="total">
         Total: $
